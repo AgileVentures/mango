@@ -23,7 +23,7 @@ config :logger, :console,
   metadata: [:request_id]
   
 # Configure hound  
-config :hound, driver: "phantomjs", host: "https://phoenix-inside-out-tansaku.c9users.io", port: 8082
+config :hound, driver: "phantomjs", host: "https://mastering-phoenix-framework-federicoesparza.c9users.io", port: 8082
  
 
 # Import environment specific config. This must remain at the bottom
