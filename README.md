@@ -1,5 +1,12 @@
 # Mango
 
+To start phantomjs:
+phantomjs --webdriver=8082
+
+To install phantomjs:
+sudo npm -g install phantomjs-prebuilt
+
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`

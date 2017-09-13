@@ -6,7 +6,12 @@ config :mango, MangoWeb.Endpoint,
   http: [port: 8081],
   server: true
 
-config :hound, driver: "phantomjs"
+# Configure hound  
+config :hound, driver: "phantomjs", 
+               host: "https://mastering-phoenix-framework-federicoesparza.c9users.io", 
+               port: 8082, 
+               app_host: "https://mastering-phoenix-framework-federicoesparza.c9users.io", 
+               app_port: 8081
 
 # Print only warnings and errors during test
 config :logger, level: :warn

@@ -21,10 +21,6 @@ config :mango, MangoWeb.Endpoint,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
-  
-# Configure hound  
-config :hound, driver: "phantomjs", host: "https://mastering-phoenix-framework-federicoesparza.c9users.io", port: 8082
- 
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
