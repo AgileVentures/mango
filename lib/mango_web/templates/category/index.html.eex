@@ -1,0 +1,6 @@
+<h1 class="page-title"><%= @name |> String.capitalize %></h1>
+
+<div class="product">
+    <div class="product-name">Apple</div>
+    <div class="product-price">100</div>
+</div>

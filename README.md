@@ -1,10 +1,22 @@
 # Mango
 
+To start postgresql (on c9)
+
+```
+sudo service postgresql start
+```
+
 To start phantomjs:
+
+```
 phantomjs --webdriver=8082
+```
 
 To install phantomjs:
+
+```
 sudo npm -g install phantomjs-prebuilt
+```
 
 
 To start your Phoenix server:
