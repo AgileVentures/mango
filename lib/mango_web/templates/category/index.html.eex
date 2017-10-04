@@ -1,6 +1,8 @@
-<h1 class="page-title"><%= @name |> String.capitalize %></h1>
+<h1 class="page-title"><%= title_case(@name)  %></h1>
 
-<div class="product">
-    <div class="product-name">Apple</div>
-    <div class="product-price">100</div>
-</div>
+<%=for product <- @products do %>
+    <div class="product">
+        <div class="product-name"><%= product.name %></div>
+        <div class="product-price"><%= product.price %></div>
+    </div>
+<% end %>
