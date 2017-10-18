@@ -1,0 +1,182 @@
+Excluding tags: [skip: true]
+
+.......12:14:44.842 [error] #PID<0.493.0> running MangoWeb.Endpoint terminated
+Server: mastering-phoenix-framework-federicoesparza.c9users.io:8081 (http)
+Request: GET /categories/fruits
+** (exit) an exception was raised:
+    ** (DBConnection.OwnershipError) cannot find ownership process for #PID<0.493.0>.
+
+When using ownership, you must manage connections in one
+of the four ways:
+
+* By explicitly checking out a connection
+* By explicitly allowing a spawned process
+* By running the pool in shared mode
+* By using :caller option with allowed process
+
+The first two options require every new process to explicitly
+check a connection out or be allowed by calling checkout or
+allow respectively.
+
+The third option requires a {:shared, pid} mode to be set.
+If using shared mode in tests, make sure your tests are not
+async.
+
+The fourth option requires [caller: pid] to be used when
+checking out a connection from the pool. The caller process
+should already be allowed on a connection.
+
+If you are reading this error, it means you have not done one
+of the steps above or that the owner process has crashed.
+
+See Ecto.Adapters.SQL.Sandbox docs for more information.
+        (db_connection) lib/db_connection.ex:926: DBConnection.checkout/2
+        (db_connection) lib/db_connection.ex:742: DBConnection.run/3
+        (db_connection) lib/db_connection.ex:636: DBConnection.execute/4
+        (ecto) lib/ecto/adapters/postgres/connection.ex:98: Ecto.Adapters.Postgres.Connection.execute/4
+        (ecto) lib/ecto/adapters/sql.ex:256: Ecto.Adapters.SQL.sql_call/6
+        (ecto) lib/ecto/adapters/sql.ex:436: Ecto.Adapters.SQL.execute_or_reset/7
+        (ecto) lib/ecto/repo/queryable.ex:133: Ecto.Repo.Queryable.execute/5
+        (ecto) lib/ecto/repo/queryable.ex:37: Ecto.Repo.Queryable.all/4
+        (mango) lib/mango/catalog/catalog.ex:21: Mango.Catalog.get_category_products/1
+        (mango) lib/mango_web/controllers/category_controller.ex:7: MangoWeb.CategoryController.index/2
+        (mango) lib/mango_web/controllers/category_controller.ex:1: MangoWeb.CategoryController.action/2
+        (mango) lib/mango_web/controllers/category_controller.ex:1: MangoWeb.CategoryController.phoenix_controller_pipeline/2
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.instrument/4
+        (phoenix) lib/phoenix/router.ex:278: Phoenix.Router.__call__/1
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.plug_builder_call/2
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.call/2
+        (plug) lib/plug/adapters/cowboy/handler.ex:15: Plug.Adapters.Cowboy.Handler.upgrade/4
+        (cowboy) /home/ubuntu/workspace/mango/deps/cowboy/src/cowboy_protocol.erl:442: :cowboy_protocol.execute/4
+
+
+  1) test shows fruits (MangoWeb.Acceptance.CategoryPageTest)
+     test/mango_web/acceptance/category_page_test.exs:14
+     ** (Hound.NoSuchElementError) No element found for css '.page-title'
+     code: page_title = find_element(:css, ".page-title") |> visible_text()
+     stacktrace:
+       (hound) lib/hound/helpers/page.ex:51: Hound.Helpers.Page.find_element/3
+       test/mango_web/acceptance/category_page_test.exs:21: (test)
+
+12:14:51.411 [error] #PID<0.496.0> running MangoWeb.Endpoint terminated
+Server: mastering-phoenix-framework-federicoesparza.c9users.io:8081 (http)
+Request: GET /categories/vegetables
+** (exit) an exception was raised:
+    ** (DBConnection.OwnershipError) cannot find ownership process for #PID<0.496.0>.
+
+When using ownership, you must manage connections in one
+of the four ways:
+
+* By explicitly checking out a connection
+* By explicitly allowing a spawned process
+* By running the pool in shared mode
+* By using :caller option with allowed process
+
+The first two options require every new process to explicitly
+check a connection out or be allowed by calling checkout or
+allow respectively.
+
+The third option requires a {:shared, pid} mode to be set.
+If using shared mode in tests, make sure your tests are not
+async.
+
+The fourth option requires [caller: pid] to be used when
+checking out a connection from the pool. The caller process
+should already be allowed on a connection.
+
+If you are reading this error, it means you have not done one
+of the steps above or that the owner process has crashed.
+
+See Ecto.Adapters.SQL.Sandbox docs for more information.
+        (db_connection) lib/db_connection.ex:926: DBConnection.checkout/2
+        (db_connection) lib/db_connection.ex:742: DBConnection.run/3
+        (db_connection) lib/db_connection.ex:636: DBConnection.execute/4
+        (ecto) lib/ecto/adapters/postgres/connection.ex:98: Ecto.Adapters.Postgres.Connection.execute/4
+        (ecto) lib/ecto/adapters/sql.ex:256: Ecto.Adapters.SQL.sql_call/6
+        (ecto) lib/ecto/adapters/sql.ex:436: Ecto.Adapters.SQL.execute_or_reset/7
+        (ecto) lib/ecto/repo/queryable.ex:133: Ecto.Repo.Queryable.execute/5
+        (ecto) lib/ecto/repo/queryable.ex:37: Ecto.Repo.Queryable.all/4
+        (mango) lib/mango/catalog/catalog.ex:21: Mango.Catalog.get_category_products/1
+        (mango) lib/mango_web/controllers/category_controller.ex:7: MangoWeb.CategoryController.index/2
+        (mango) lib/mango_web/controllers/category_controller.ex:1: MangoWeb.CategoryController.action/2
+        (mango) lib/mango_web/controllers/category_controller.ex:1: MangoWeb.CategoryController.phoenix_controller_pipeline/2
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.instrument/4
+        (phoenix) lib/phoenix/router.ex:278: Phoenix.Router.__call__/1
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.plug_builder_call/2
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.call/2
+        (plug) lib/plug/adapters/cowboy/handler.ex:15: Plug.Adapters.Cowboy.Handler.upgrade/4
+        (cowboy) /home/ubuntu/workspace/mango/deps/cowboy/src/cowboy_protocol.erl:442: :cowboy_protocol.execute/4
+
+
+  2) test shows vegetables (MangoWeb.Acceptance.CategoryPageTest)
+     test/mango_web/acceptance/category_page_test.exs:35
+     ** (Hound.NoSuchElementError) No element found for css '.page-title'
+     code: page_title = find_element(:css, ".page-title") |> visible_text()
+     stacktrace:
+       (hound) lib/hound/helpers/page.ex:51: Hound.Helpers.Page.find_element/3
+       test/mango_web/acceptance/category_page_test.exs:42: (test)
+
+12:14:57.786 [error] #PID<0.501.0> running MangoWeb.Endpoint terminated
+Server: mastering-phoenix-framework-federicoesparza.c9users.io:8081 (http)
+Request: GET /
+** (exit) an exception was raised:
+    ** (DBConnection.OwnershipError) cannot find ownership process for #PID<0.501.0>.
+
+When using ownership, you must manage connections in one
+of the four ways:
+
+* By explicitly checking out a connection
+* By explicitly allowing a spawned process
+* By running the pool in shared mode
+* By using :caller option with allowed process
+
+The first two options require every new process to explicitly
+check a connection out or be allowed by calling checkout or
+allow respectively.
+
+The third option requires a {:shared, pid} mode to be set.
+If using shared mode in tests, make sure your tests are not
+async.
+
+The fourth option requires [caller: pid] to be used when
+checking out a connection from the pool. The caller process
+should already be allowed on a connection.
+
+If you are reading this error, it means you have not done one
+of the steps above or that the owner process has crashed.
+
+See Ecto.Adapters.SQL.Sandbox docs for more information.
+        (db_connection) lib/db_connection.ex:926: DBConnection.checkout/2
+        (db_connection) lib/db_connection.ex:742: DBConnection.run/3
+        (db_connection) lib/db_connection.ex:636: DBConnection.execute/4
+        (ecto) lib/ecto/adapters/postgres/connection.ex:98: Ecto.Adapters.Postgres.Connection.execute/4
+        (ecto) lib/ecto/adapters/sql.ex:256: Ecto.Adapters.SQL.sql_call/6
+        (ecto) lib/ecto/adapters/sql.ex:436: Ecto.Adapters.SQL.execute_or_reset/7
+        (ecto) lib/ecto/repo/queryable.ex:133: Ecto.Repo.Queryable.execute/5
+        (ecto) lib/ecto/repo/queryable.ex:37: Ecto.Repo.Queryable.all/4
+        (mango) lib/mango/catalog/catalog.ex:13: Mango.Catalog.list_seasonal_products/0
+        (mango) lib/mango_web/controllers/page_controller.ex:6: MangoWeb.PageController.index/2
+        (mango) lib/mango_web/controllers/page_controller.ex:1: MangoWeb.PageController.action/2
+        (mango) lib/mango_web/controllers/page_controller.ex:1: MangoWeb.PageController.phoenix_controller_pipeline/2
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.instrument/4
+        (phoenix) lib/phoenix/router.ex:278: Phoenix.Router.__call__/1
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.plug_builder_call/2
+        (mango) lib/mango_web/endpoint.ex:1: MangoWeb.Endpoint.call/2
+        (plug) lib/plug/adapters/cowboy/handler.ex:15: Plug.Adapters.Cowboy.Handler.upgrade/4
+        (cowboy) /home/ubuntu/workspace/mango/deps/cowboy/src/cowboy_protocol.erl:442: :cowboy_protocol.execute/4
+
+
+  3) test presence of featured products (MangoWeb.HomepageTest)
+     test/mango_web/acceptance/homepage_test.exs:7
+     ** (Hound.NoSuchElementError) No element found for css '.page-title'
+     code: page_title = find_element(:css, ".page-title") |> visible_text()
+     stacktrace:
+       (hound) lib/hound/helpers/page.ex:51: Hound.Helpers.Page.find_element/3
+       test/mango_web/acceptance/homepage_test.exs:18: (test)
+
+
+
+Finished in 19.9 seconds
+11 tests, 3 failures, 1 skipped
+
+Randomized with seed 925869
