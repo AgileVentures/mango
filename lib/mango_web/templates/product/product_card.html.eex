@@ -1,0 +1,4 @@
+<div class="product">
+  <div class="product-name"><%= @prod.name %></div>
+  <div>₹ <span class="product-price"><%= @prod.price %></span></div>
+</div>

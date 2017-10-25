@@ -1,8 +1,17 @@
-<h1 class="page-title"><%= title_case(@name)  %></h1>
+<!--<h1 class="page-title"><%#= title_case(@name)  %></h1>-->
 
-<%=for product <- @products do %>
-    <div class="product">
-        <div class="product-name"><%= product.name %></div>
-        <div class="product-price"><%= product.price %></div>
+<!--<%#=for product <- @products do %>-->
+<!--    <div class="product">-->
+<!--        <div class="product-name"><%#= product.name %></div>-->
+<!--        <div class="product-price"><%#= product.price %></div>-->
+<!--    </div>-->
+<!--<%# end %>-->
+
+<h1 class="page-title"><%= title_case @name %></h1>
+<div class="row">
+  <%= for product <- @products do %>
+    <div class="col-md-4">
+      <%= render MangoWeb.ProductView, "product_card.html", prod: product %>
     </div>
-<% end %>
+  <% end %>
+</div>
