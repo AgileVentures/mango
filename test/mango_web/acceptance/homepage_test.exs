@@ -37,7 +37,7 @@ defmodule MangoWeb.HomepageTest do
     
     assert product_name == "Apple"
     # And I expect its price to be displayed on the screen
-    assert product_price == "100"
+    assert product_price == "₹ 100"
     
     # And I expect that Tomato is not present on the screen
     refute page_source() =~ "Tomato"

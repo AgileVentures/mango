@@ -11,7 +11,7 @@
 <div class="row">
   <%= for product <- @products do %>
     <div class="col-md-4">
-      <%= render MangoWeb.ProductView, "product_card.html", prod: product %>
+      <%= render MangoWeb.ProductView, "product_card.html", product: product %>
     </div>
   <% end %>
 </div>
