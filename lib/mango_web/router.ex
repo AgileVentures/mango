@@ -20,6 +20,7 @@ defmodule MangoWeb.Router do
     get "/categories/:name", CategoryController, :index
     
     get "/register", RegistrationController, :new
+    post "/register", RegistrationController, :create
     
   end
 
