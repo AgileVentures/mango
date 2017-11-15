@@ -18,6 +18,9 @@ defmodule MangoWeb.Router do
 
     get "/", PageController, :index
     get "/categories/:name", CategoryController, :index
+    
+    get "/register", RegistrationController, :new
+    
   end
 
   # Other scopes may use custom stacks.

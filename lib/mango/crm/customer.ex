@@ -1,8 +1,9 @@
+# Schema Module
+
 defmodule Mango.CRM.Customer do
   use Ecto.Schema
   import Ecto.Changeset
   alias Mango.CRM.Customer
-
 
   schema "customers" do
     field :email, :string
