@@ -12,4 +12,6 @@ defmodule Mango.CRM do
   def create_customer(params) do
     build_customer(params) |> Repo.insert
   end
+  
+  def get_customer_by_email(email), do: Repo.get_by(Customer, email: email)
 end

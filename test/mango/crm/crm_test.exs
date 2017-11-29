@@ -29,4 +29,21 @@ defmodule Mango.CRMTest do
     invalid_attrs = %{}
     assert {:error, %Ecto.Changeset{}} = CRM.create_customer(invalid_attrs)
   end
+  
+  test "get customer by email" do
+  
+   valid_attrs = %{
+      "name" => "John",
+      "email" => "john@example.com",
+      "password" => "secret",
+      "residence_area" => "Area 1",
+      "phone" => "1111"
+    }
+    
+    {:ok, customer} = CRM.create_customer(valid_attrs)
+    retrieved_customer = CRM.get_customer_by_email("john@example.com")
+    assert retrieved_customer.id == customer.id
+  
+  end
+  
 end
