@@ -26,6 +26,7 @@ defmodule MangoWeb.Acceptance.CartTest do
       end)
    end
    
+   @tag :skip
    test "add to cart" do
      navigate_to("/")
      
