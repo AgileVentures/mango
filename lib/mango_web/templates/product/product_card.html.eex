@@ -10,4 +10,6 @@
     <hr/>
   </div>
   <img src="<%= @product.image %>" />
+  <hr />
+  <%= render "cart_form.html", product: @product, conn: @conn  %>
 </div>
