@@ -1,7 +1,7 @@
 defmodule Mango.Sales.Order do
   use Ecto.Schema
   import Ecto.Changeset
-  alias Mango.Sales.Order
+  alias Mango.Sales.{Order, LineItem}
 
 
   schema "orders" do
