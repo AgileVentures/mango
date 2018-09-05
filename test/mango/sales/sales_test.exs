@@ -16,17 +16,19 @@ defmodule Mango.SalesTest do
     assert created_cart.id == retrieved_cart.id
   end
   
-  @tag :skip
+  #@tag :skip
   test "add_to_cart/2" do
     product = %Product{
-      name: "Tomato",
-      pack_size: "1 kg",
-      price: 55,
-      sku: "A123",
-      is_seasonal: false, category: "vegetables" } |> Repo.insert!
+                    name: "Tomato",
+                    pack_size: "1 kg",
+                    price: 55,
+                    sku: "A123",
+                    is_seasonal: false, 
+                    category: "vegetables" } 
+              |> Repo.insert!
     cart = Sales.create_cart
     {:ok, cart} = Sales.add_to_cart(cart, %{"product_id" => product.id, "quantity" => "2"})
-    
+
     assert [line_item] = cart.line_items
     assert line_item.product_id == product.id
     assert line_item.product_name == "Tomato"

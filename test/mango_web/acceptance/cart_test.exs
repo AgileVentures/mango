@@ -13,6 +13,7 @@ defmodule MangoWeb.Acceptance.CartTest do
       :ok
    end
    
+   @tag :skip
    test "presence of cart form for each product" do
       navigate_to("/")
       
