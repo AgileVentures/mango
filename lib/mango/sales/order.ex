@@ -3,7 +3,6 @@ defmodule Mango.Sales.Order do
   import Ecto.Changeset
   alias Mango.Sales.{Order, LineItem}
 
-
   schema "orders" do
     # field :line_items, {:array, :map}
     field :status, :string

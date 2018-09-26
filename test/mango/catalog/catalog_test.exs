@@ -1,11 +1,11 @@
 defmodule Mango.CatalogTest do
   use Mango.DataCase
   alias Mango.{Catalog, Repo}
-  alias Mango.Catalog.Product
-  
+  alias Mango.Catalog.{Product, ProductFactory}
+
   setup do
-    Repo.insert(%Product{ name: "Tomato", price: 50, is_seasonal: false, category: "vegetables" })
-    Repo.insert(%Product{ name: "Apple", price: 100, is_seasonal: true, category: "fruits" })
+    Repo.insert!(ProductFactory.tomato)
+    Repo.insert!(ProductFactory.apple)
     :ok
   end
   
