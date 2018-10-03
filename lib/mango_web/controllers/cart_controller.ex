@@ -11,7 +11,7 @@ defmodule MangoWeb.CartController do
     cart = conn.assigns.cart 
     case Sales.add_to_cart(cart, cart_params) do
       {:ok, _} -> IO.puts "OK clause"
-        # {:error, _} ->
+      {:error, _} ->
         # handle the failure
     end
   end
