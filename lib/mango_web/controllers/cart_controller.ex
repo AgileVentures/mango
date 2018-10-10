@@ -10,7 +10,12 @@ defmodule MangoWeb.CartController do
   def add(conn, %{"cart" => cart_params}) do
     cart = conn.assigns.cart 
     case Sales.add_to_cart(cart, cart_params) do
-      {:ok, _} -> IO.puts "OK clause"
+      {:ok, _} ->
+        %{"product_name"=> name,"pack_size"=> size,"quantity"=> qty} = cart_params
+        message = "Product added to cart - #{name}(#{size}) x #{qty} qty"
+        conn
+        |> put_flash(:info, message)
+        |> redirect(to: page_path(conn, :index))
       {:error, _} ->
         # handle the failure
     end

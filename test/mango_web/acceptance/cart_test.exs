@@ -25,7 +25,6 @@ defmodule MangoWeb.Acceptance.CartTest do
                   end)
    end
    
-  @tag :skip
    test "add to cart" do
      navigate_to("/")
      
@@ -38,7 +37,7 @@ defmodule MangoWeb.Acceptance.CartTest do
      
      find_within_element(product, :name, "cart[quantity]") 
      |> fill_field(2)
-     
+
      find_within_element(product, :tag, "button") 
      |> click
      
