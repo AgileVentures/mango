@@ -27,7 +27,7 @@ defmodule MangoWeb.Acceptance.CartTest do
    
    test "add to cart" do
      navigate_to("/")
-     
+     take_screenshot()
      [product | _rest] = find_all_elements(:css, ".product.thumbnail")
      
      product_name = find_within_element(product, :name, "cart[product_name]")

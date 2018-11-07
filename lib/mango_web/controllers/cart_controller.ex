@@ -18,7 +18,13 @@ defmodule MangoWeb.CartController do
         |> redirect(to: page_path(conn, :index))
       {:error, _} ->
         # handle the failure
+        IO.puts "Implement error handling on page 208"
     end
+  end
+  
+  def show(conn, _params) do
+    IO.inspect conn, label: "+++++++++++++++++++++"
+    render conn, :show
   end
   
 end
