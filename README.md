@@ -18,6 +18,8 @@ To install phantomjs:
 sudo npm -g install phantomjs-prebuilt
 ```
 
+Might need to add `--unsafe-perm` to the above command
+
 To start your Phoenix server AND the iex shell:
 ```
 iex -S mix phx.server
