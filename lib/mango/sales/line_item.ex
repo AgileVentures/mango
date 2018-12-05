@@ -18,9 +18,9 @@ defmodule Mango.Sales.LineItem do
   def changeset(%LineItem{} = line_item, attrs) do
     line_item
     |> cast(attrs, [:product_id, :product_name, :pack_size, :quantity, :unit_price, :total, :delete])
-    |> IO.inspect(label: "++++++BEFORE set_delete")
+    # |> IO.inspect(label: "++++++BEFORE set_delete")
     |> set_delete
-    |> IO.inspect(label: "++++++AFTER set_delete")
+    # |> IO.inspect(label: "++++++AFTER set_delete")
     |> set_product_details
     |> set_total
     |> validate_required([:product_id, :product_name, :pack_size, :quantity, :unit_price])
