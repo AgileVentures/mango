@@ -1,3 +1,4 @@
+<%= link "Checkout", to: checkout_path(@conn, :edit), class: "btn btn-primary pull-right "%>
 <h1>Cart</h1>
 <%= if Enum.empty?(@cart.line_items) do %>
   <p>Your cart is empty</p>
@@ -38,4 +39,5 @@
       <%= submit "Update Cart", class: "btn btn-primary" %>
     </div>
   <% end %>
+  
 <% end %>
