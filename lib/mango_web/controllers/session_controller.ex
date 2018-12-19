@@ -12,13 +12,14 @@ defmodule MangoWeb.SessionController do
       |> put_flash(:error,  "Invalid username/password combination") 
       |> render("new.html")
     customer ->
+      path = get_session(conn, :intending_to_visit) || page_path(conn, :index)
       # IO.inspect conn, label: "+++++++++++++++++"
       conn
       |> assign(:current_customer, customer)
       |> put_session(:customer_id, customer.id)
       |> configure_session(renew: true)
       |> put_flash(:info,  "Login successful") 
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: path)
     end
   end
   
