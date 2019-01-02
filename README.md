@@ -1,5 +1,7 @@
 # Mango
 
+## BEFORE EVERY SESSION ON C9, RUN THESE 3 COMMANDS:
+
 To start postgresql (on c9)
 
 ```
@@ -12,6 +14,11 @@ To start phantomjs:
 phantomjs --webdriver=8082
 ```
 
+To start your Phoenix server AND the iex shell:
+```
+iex -S mix phx.server
+```
+
 To install phantomjs:
 
 ```
@@ -20,10 +27,6 @@ sudo npm -g install phantomjs-prebuilt
 
 Might need to add `--unsafe-perm` to the above command
 
-To start your Phoenix server AND the iex shell:
-```
-iex -S mix phx.server
-```
 
 
 To start your Phoenix server:

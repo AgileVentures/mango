@@ -13,9 +13,10 @@
         </tr>
       </thead>
       <tbody>
-      <%= for {item, i} <- Enum.with_index(@order.line_items, 1) do %>
+        <!--for {item, i} <- %LineItem{:faith, :federico, :fjoseph}-->
+      <%= for {item, index} <- Enum.with_index(@order.line_items, 1) do %>
         <tr>
-          <td><%= i %></td>
+          <td><%= index %></td>
           <td><%= item.product_name %></td>
           <td><%= item.pack_size %></td>
           <td class="text-right"><%= item.quantity %></td>
