@@ -9,7 +9,7 @@ defmodule Mango.Sales do
   
   def get_cart(id) do 
     Order 
-    |> Repo.get_by!(id: id, status: "In Cart")
+    |> Repo.get_by(id: id, status: "In Cart")
   end
   
   def add_to_cart(%Order{line_items: []} = cart, cart_params) do 

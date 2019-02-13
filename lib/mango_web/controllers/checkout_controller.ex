@@ -11,7 +11,7 @@ defmodule MangoWeb.CheckoutController do
   
   def update(conn, %{"order" => order_params}) do
     order           = conn.assigns.cart
-    order_params = put_customer_data_in_params(conn, order_params)
+    order_params    = put_customer_data_in_params(conn, order_params)
     case Sales.confirm_order(order, order_params) do
       {:ok, _} ->
         conn
@@ -29,7 +29,7 @@ defmodule MangoWeb.CheckoutController do
     params
     |> Map.put("customer_id", customer.id)
     |> Map.put("customer_name", customer.name)
-    |> Map.put("customer_residence_area", customer.residence_area)
+    |> Map.put("residence_area", customer.residence_area)
     |> Map.put("email", customer.email)
   end
 end

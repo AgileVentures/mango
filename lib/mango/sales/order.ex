@@ -15,16 +15,6 @@ defmodule Mango.Sales.Order do
     field :residence_area, :string
     
     timestamps()
-    
-    #   schema "orders" do
-    # embeds_many :line_items, LineItem, on_replace: :delete
-    # field :status, :string
-    # field :total, :decimal
-    # field :comments, :string
-    # field :customer_id, :integer
-    # field :customer_name, :string
-    # field :email, :string
-    # field :residence_area, :string
   end
 
   @doc false
