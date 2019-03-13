@@ -11,10 +11,12 @@ config :mango, MangoWeb.Endpoint,
 
 # Config hound for Chome headless testing
 config :hound, driver: "chrome_driver",
-               browser: "chrome",
+               browser: "chrome_headless",
+               app_port: 8081,
                additional_capabilities: %{
                chromeOptions: %{ "args" => [
-                  "--headless"
+                  "--headless",
+                  "--disable-gpu"
                               ]}
                }
 # config :hound, driver: "phantomjs", 
