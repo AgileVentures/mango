@@ -4,7 +4,6 @@ use Mix.Config
 # you can enable the server option below.
 config :mango, MangoWeb.Endpoint,
   http: [port: 8081],
-  url: [host: "localhost"],
   server: true
 
 # Configure hound  
