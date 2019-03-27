@@ -30,8 +30,8 @@ config :logger, level: :warn
 # Configure your database
 config :mango, Mango.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: "postgress",
+  password: "postgress",
   database: "mango_test",
   hostname: "localhost",
   template: "template0",
