@@ -51,8 +51,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :mango, Mango.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
+  username: System.get_env("DB_USERNAME") || "postgress",
+  password: System.get_env("DB_PASSWORD") || "postgress",
   database: "mango_dev",
   hostname: "localhost",
   template: "template0",
