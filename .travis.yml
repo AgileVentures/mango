@@ -1,0 +1,22 @@
+dist: xenial
+language: elixir
+otp_release:
+  - 20.3
+elixir:
+  - 1.7
+addons:
+  postgresql: "11.0"
+  chrome: stable
+  apt: 
+    packages:
+     - chromium-chromedriver
+services:
+  - postgresql
+env:
+  - MIX_ENV=test
+before_script:
+  - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
+  - mix ecto.create && mix ecto.migrate
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+script:
+  - mix test
