@@ -6,12 +6,24 @@ config :mango, MangoWeb.Endpoint,
   http: [port: 8081],
   server: true
 
-# Configure hound  
-config :hound, driver: "phantomjs", 
-               host: "https://mastering-phoenix-framework-federicoesparza.c9users.io", 
-               port: 8082, 
-               app_host: "https://mastering-phoenix-framework-federicoesparza.c9users.io", 
-               app_port: 8081
+# Configure hound
+
+# Config hound for Chome headless testing
+config :hound, driver: "chrome_driver",
+               browser: "chrome_headless",
+               app_port: 8081,
+               additional_capabilities: %{
+               chromeOptions: %{ "args" => [
+                  "--headless",
+                  "--disable-gpu",
+                  "--no-sandbox"
+                              ]}
+               }
+# config :hound, driver: "phantomjs",
+#                host: "https://mastering-phoenix-framework-federicoesparza.c9users.io",
+#                port: 8082,
+#                app_host: "https://mastering-phoenix-framework-federicoesparza.c9users.io",
+#                app_port: 8081
 
 # Print only warnings and errors during test
 config :logger, level: :warn

@@ -3,7 +3,7 @@
 defmodule Mango.CRM.Customer do
   use Ecto.Schema
   import Ecto.Changeset
-  import Comeonin.Bcrypt, only: [hashpwsalt: 1]
+  import Bcrypt, only: [hash_pwd_salt: 1]
   alias Mango.CRM.Customer
 
   schema "customers" do
@@ -25,12 +25,12 @@ defmodule Mango.CRM.Customer do
     |> unique_constraint(:email)
     |> put_hashed_password
   end
-  
+
   defp put_hashed_password(changeset) do
     case changeset.valid? do
       true ->
         changes = changeset.changes
-        put_change(changeset, :password_hash, hashpwsalt(changes.password))
+        put_change(changeset, :password_hash, hash_pwd_salt(changes.password))
       _ ->
         changeset
     end
