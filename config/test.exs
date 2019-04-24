@@ -15,7 +15,8 @@ config :hound, driver: "chrome_driver",
                additional_capabilities: %{
                chromeOptions: %{ "args" => [
                   "--headless",
-                  "--disable-gpu"
+                  "--disable-gpu",
+                  "--no-sandbox"
                               ]}
                }
 # config :hound, driver: "phantomjs",

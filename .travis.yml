@@ -1,0 +1,16 @@
+dist: trusty
+language: elixir
+otp_release:
+  - 20.3
+elixir:
+  - 1.7
+addons:
+  chrome: stable
+  apt: 
+    packages:
+     - chromium-chromedriver
+before_script:
+  - ln --symbolic /usr/lib/chromium-browser/chromedriver "${HOME}/bin/chromedriver"
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+script:
+  - mix test
