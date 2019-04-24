@@ -1,4 +1,4 @@
-dist: xenial
+dist: trusty
 language: elixir
 otp_release:
   - 20.3
